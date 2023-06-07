@@ -8,8 +8,16 @@
 <div class="demo">
 <div>start date: {{startDate | date:'MMM/dd/yy'}}</div>
 </div>
-<div class="course">
-    <card *ngFor="let course of courses; index as i;" (courseSelected)="onCourseSelected()" [course]="course" [cardIndex]="i+1"></card>
+<!-- <div *ngFor="let pair of course | keyvalue">
+    {{pair.key + ':' + pair.value}}
+</div> -->
+
+<div class="courses" #container >
+    <card  
+    (courseSelected)="onCourseSelected()" 
+    [course]="courses[0]" 
+   ></card>
 </div>
+
 
 

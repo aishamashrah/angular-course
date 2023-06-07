@@ -40,5 +40,6 @@ CardStyles(){
     'background-image': 'url(' + this.course.iconUrl +')',
   }
   
+  
 }
 }

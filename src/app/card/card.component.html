@@ -2,10 +2,10 @@
 <div class = "course-card"[ngClass]="CardClasses()">
     
     <div class = "course-title">
-        {{cardIndex +' '+ course.description}}
+        {{cardIndex || '' +' ' + course.description}}
     </div>
     <img width="300" alt="angular logo"
-        *ngIf="isImageVisible(); else noImage"
+        
             [src]="course.iconUrl">
 
 
@@ -15,6 +15,12 @@
     <div class="course-description">
         {{course.longDescription}}
     </div>
+    <ng-template> <img src="/assets/empty-image.png"></ng-template>
+   <ng-content select="course-image" *ngIf="course.iconUrl"></ng-content>
+
+
+
+   
     <!-- <ng-container [ngSwitch]="course.category">
          <div class="course-category">
 <div class="category" *ngswitchCase="'BEGINNER">beginner</div>
